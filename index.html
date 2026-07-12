@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Guía de Estudio Interactiva: Norma Técnica Manipulación de Cargas</title>
+    <meta name="description" content="Manual de estudio profundo, interactivo y calculadora legal de la Norma Técnica sobre Manipulación de Cargas en Venezuela.">
+    <meta name="keywords" content="Norma Técnica, Inpsasel, Manipulación manual de cargas, Ergonomía, SST, LOPCYMAT, David Linares Brea, La Movida SST Plus">
+    <meta name="author" content="David Linares Brea">
+    <meta name="theme-color" content="#14b8a6">
+
+    <!-- Open Graph (WhatsApp, Telegram, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.movidasst.com/">
+    <meta property="og:title" content="Guía de Estudio: Norma Técnica Manipulación de Cargas">
+    <meta property="og:description" content="Estudia los 39 artículos de la Norma Técnica. Incluye Glosario, Evaluaciones Ergonómicas, Controles y Calculadora Legal de Pesos.">
+    <meta property="og:image" content="https://assets.poap.xyz/73b40c48-9fa2-43b5-98b8-35b3b7b84e54.png?size=large">
+    <meta property="og:site_name" content="Academia Movida SST">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#f0fdfa', 100: '#ccfbf1', 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a' },
+                        vzla: { red: '#ef4444', blue: '#3b82f6', yellow: '#facc15' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animaciones */
+        @keyframes fadeInScreen {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInScreen 0.3s ease-out forwards; }
+        
+        @keyframes pop {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+        /* Estilos Calculadora (Radios Ocultos) */
+        .calc-radio input:checked + div {
+            border-color: #14b8a6; background-color: #f0fdfa; color: #0d9488;
+            box-shadow: 0 4px 6px -1px rgba(20, 184, 166, 0.2);
+        }
+        .calc-radio input:checked + div i { color: #14b8a6; }
+        
+        /* Acordeones robustos */
+        .accordion-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease; 
+        }
+        .accordion-btn[aria-expanded="true"] + .accordion-content { 
+            max-height: 2500px; 
+            padding-top: 1rem; 
+            padding-bottom: 1.5rem; 
+        }
+        .accordion-btn[aria-expanded="true"] .icon-rotate { transform: rotate(180deg); }
+        .accordion-btn[aria-expanded="true"] { background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+        
+        /* Formato de texto legal */
+        .legal-text { text-align: justify; line-height: 1.6; font-size: 0.8125rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-brand-500 selection:text-white pb-24">
+
+    <!-- Barra de progreso superior -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-200 z-[60]">
+        <div id="progress-bar" class="h-full bg-brand-500 w-[25%] transition-all duration-300"></div>
+    </div>
+
+    <header class="fixed top-1 w-full z-[55] px-4 py-3">
+        <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-slate-100 p-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://assets.poap.xyz/73b40c48-9fa2-43b5-98b8-35b3b7b84e54.png?size=large" alt="Logo" class="w-11 h-11 object-contain rounded-full shadow-sm bg-white border border-slate-50">
+                <div>
+                    <h1 class="font-black text-sm leading-tight text-slate-800">Academia <span class="text-brand-600">Movida SST</span></h1>
+                    <p class="text-[9px] text-slate-500 font-bold tracking-widest uppercase mt-0.5 truncate w-40 sm:w-64" title="Norma Técnica: Control en la Manipulación de Carga">Norma Técnica de Cargas</p>
+                </div>
+            </div>
+            <!-- Colores Bandera Vzla -->
+            <div class="flex gap-1 shrink-0">
+                <div class="w-2.5 h-2.5 rounded-full bg-vzla-yellow shadow-sm"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-vzla-blue shadow-sm"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-vzla-red shadow-sm"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="h-24"></div>
+
+    <main class="px-4 max-w-lg mx-auto overflow-hidden">
+        
+        <section id="tab-fundamentos" class="tab-content block animate-fade-in">
+            <div class="relative bg-slate-800 rounded-3xl p-6 text-white shadow-xl overflow-hidden mb-6 border border-slate-700">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-500 rounded-full blur-3xl opacity-20 z-0"></div>
+                <div class="relative z-10">
+                    <span class="bg-white/10 text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-sm border border-white/20 shadow-sm"><i class="fa-solid fa-book-bookmark mr-1"></i> Guía de Estudio</span>
+                    <h2 class="text-2xl font-black mt-4 mb-2 leading-tight">Norma Técnica</h2>
+                    <p class="text-brand-400 text-sm mb-6 font-bold leading-relaxed">Control en la Manipulación, Levantamiento y Traslado Manual de Carga</p>
+                    
+                    <div class="bg-white text-slate-800 p-4 rounded-2xl shadow-inner border border-slate-100">
+                        <h3 class="font-black text-sm mb-2 text-brand-600"><i class="fa-solid fa-bullseye"></i> Objeto y Campo de Aplicación (Art. 1 y 2)</h3>
+                        <p class="text-[13px] font-medium text-slate-600 leading-relaxed text-justify mb-3">
+                            Establecer criterios para identificar, evaluar y controlar procesos peligrosos en manipulación de cargas con pesos <strong>mayores a 3 kilogramos</strong>, para prevenir Trastornos Musculoesqueléticos (TME). Aplica a toda entidad de trabajo pública, privada o comunitaria en Venezuela.
+                        </p>
+                        <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 flex gap-3 items-start">
+                            <i class="fa-solid fa-shield-halved text-amber-500 mt-0.5"></i>
+                            <p class="text-[11px] text-amber-800 font-bold leading-tight">Excepción Constitucional: Quedan exceptuados los miembros de la Fuerza Armada Nacional Bolivariana (FANB).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de Descarga PDF Oficial -->
+            <div class="mb-6">
+                <a href="https://drive.google.com/uc?id=1y5HygEFG4Evw-q1zaLKRPFpxliIRZ-x4&export=download" target="_blank" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-3.5 px-4 rounded-2xl flex justify-between items-center shadow-lg transition-transform active:scale-95 border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 w-24 h-24 bg-brand-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="flex items-center gap-3 relative z-10">
+                        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-brand-400">
+                            <i class="fa-solid fa-file-pdf text-xl"></i>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-sm tracking-wide">Descargar Norma Oficial</span>
+                            <span class="block text-[10px] text-slate-400 font-medium mt-0.5">Documento completo en formato PDF</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cloud-arrow-down text-xl text-slate-400 relative z-10 group-hover:text-brand-400 transition-colors"></i>
+                </a>
+            </div>
+
+            <!-- Glosario Art 3 -->
+            <div class="mb-6">
+                <h3 class="font-black text-lg text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-spell-check text-blue-500"></i> Glosario Legal (Art. 3)</h3>
+                <p class="text-xs text-slate-500 mb-4 font-medium">Toca cada término para estudiar su definición técnica exacta según la norma.</p>
+                
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden divide-y divide-slate-100">
+                    <button class="accordion-btn w-full text-left p-4 font-bold text-sm text-slate-700 flex justify-between items-center transition-colors" aria-expanded="false">
+                        <span>Manipulación, Levantamiento y Carga</span>
+                        <i class="fa-solid fa-chevron-down icon-rotate text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-slate-50 legal-text text-slate-600">
+                        <ul class="space-y-3">
+                            <li><strong class="text-slate-800">Carga:</strong> Cualquier objeto, persona o animal que requiera ser manipulado, cuyo peso sea igual o mayor a 3 kg.</li>
+                            <li><strong class="text-slate-800">Manipulación manual:</strong> Toda operación que requiera uso de fuerza humana para levantar, descender, empujar, arrastrar, transportar o detener un objeto.</li>
+                            <li><strong class="text-slate-800">Levantamiento:</strong> Desplazamiento vertical desde posición inicial a una diferente venciendo la gravedad.</li>
+                            <li><strong class="text-slate-800">Empuje / Tracción:</strong> Empuje es ejercer fuerza al frente para desplazar; tracción es fuerza ejercida en dirección al cuerpo (arrastre).</li>
+                            <li><strong class="text-slate-800">Centro de Gravedad:</strong> Punto de aplicación de la resultante de todas las fuerzas de gravedad sobre la carga.</li>
+                        </ul>
+                    </div>
+
+                    <button class="accordion-btn w-full text-left p-4 font-bold text-sm text-slate-700 flex justify-between items-center transition-colors" aria-expanded="false">
+                        <span>Fisiología y Ergonomía</span>
+                        <i class="fa-solid fa-chevron-down icon-rotate text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-slate-50 legal-text text-slate-600">
+                        <ul class="space-y-3">
+                            <li><strong class="text-slate-800">Ergonomía:</strong> Disciplina encargada de adecuar métodos, organización y herramientas a las características psicológicas, cognitivas y antropométricas del trabajador.</li>
+                            <li><strong class="text-slate-800">Antropometría:</strong> Ciencia que estudia las dimensiones y medidas humanas para el diseño industrial y biomecánico.</li>
+                            <li><strong class="text-slate-800">Fatiga física:</strong> Disminución de la capacidad física después de realizar una tarea por un tiempo determinado, por consumo excesivo de energía.</li>
+                            <li><strong class="text-slate-800">TME (Trastornos Músculo-esqueléticos):</strong> Lesiones que afectan partes blandas: músculos, tendones, nervios y estructuras próximas a articulaciones.</li>
+                            <li><strong class="text-slate-800">Posturas forzadas:</strong> Posturas fuera de las zonas ideales, obligadas por el diseño del puesto, que sobrecargan el sistema músculo esquelético.</li>
+                        </ul>
+                    </div>
+
+                    <button class="accordion-btn w-full text-left p-4 font-bold text-sm text-slate-700 flex justify-between items-center transition-colors" aria-expanded="false">
+                        <span>Tipos de Agarre</span>
+                        <i class="fa-solid fa-chevron-down icon-rotate text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-slate-50 legal-text text-slate-600">
+                        <ul class="space-y-3">
+                            <li><strong class="text-emerald-600">Agarre Bueno:</strong> Diseño con asas que permite agarre palmar completo y muñeca en posición neutral.</li>
+                            <li><strong class="text-amber-600">Agarre Regular:</strong> Agarre fuera de posición neutral, o cargas sin asas sujetadas flexionando dedos a 90° alrededor de la carga.</li>
+                            <li><strong class="text-rose-600">Agarre Malo:</strong> Diseño que no permite buen agarre e involucra otras partes del cuerpo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organización del Trabajo (Art 4-11) -->
+            <div>
+                <h3 class="font-black text-lg text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-network-wired text-brand-500"></i> Organización del Trabajo</h3>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-sm text-brand-600 mb-1">Recuperación Muscular (Art. 4)</h4>
+                        <p class="legal-text text-slate-600">El patrono debe garantizar pausas activas, rotación de puestos y/o incorporar dos o más trabajadores en tareas de alta demanda física para permitir la recuperación de la fatiga muscular.</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex gap-4 items-start">
+                        <i class="fa-solid fa-truck-ramp-box text-2xl text-blue-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-sm text-blue-600 mb-1">Empuje, Arrastre y Tránsito (Art. 6, 7 y 9)</h4>
+                            <p class="legal-text text-slate-600">Las vías deben estar despejadas, sin obstáculos y con buena iluminación. El empuje/arrastre exige apoyo firme de los pies y evaluar distancia, frecuencia y características de la carga.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200 shadow-sm relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-12 h-12 bg-rose-100 rounded-bl-full z-0"></div>
+                        <h4 class="font-bold text-sm text-rose-700 mb-2 relative z-10"><i class="fa-solid fa-ban"></i> Prohibición: Caída Libre (Art. 8)</h4>
+                        <p class="legal-text text-rose-800 relative z-10 font-medium">Se debe <strong>eliminar</strong> toda tarea donde los trabajadores reciban directamente la carga por lanzamientos en caída libre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-evaluacion" class="tab-content hidden">
+            <div class="flex items-center gap-3 mb-6 pl-2">
+                <div class="bg-indigo-100 text-indigo-600 w-12 h-12 rounded-full flex items-center justify-center shadow-sm shrink-0 text-xl"><i class="fa-solid fa-microscope"></i></div>
+                <div>
+                    <h3 class="font-black text-2xl text-slate-800 leading-tight">Evaluación y Control</h3>
+                    <p class="text-[10px] text-indigo-600 font-bold uppercase tracking-widest">Capítulo II y III (Arts. 12-22)</p>
+                </div>
+            </div>
+
+            <div class="space-y-5 mb-8">
+                <p class="text-sm text-slate-600 font-medium italic pl-2 border-l-4 border-indigo-500">"El diseño de los puestos de trabajo debe ser producto del análisis del flujo de materiales y las características antropométricas de la población venezolana." (Art. 5)</p>
+
+                <!-- Acordeón de Evaluaciones (Art 12-17) -->
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden divide-y divide-slate-100">
+                    <button class="accordion-btn w-full text-left p-4 font-bold text-sm text-slate-700 flex justify-between items-center transition-colors" aria-expanded="true">
+                        <span><i class="fa-solid fa-clipboard-list text-indigo-500 mr-2"></i> Criterios de Evaluación Ergonómica</span>
+                        <i class="fa-solid fa-chevron-down icon-rotate text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-slate-50 legal-text text-slate-600">
+                        <ul class="space-y-4">
+                            <li><strong>Estudios Ergonómicos (Art. 12):</strong> Deben determinar, según la demanda, la cantidad de medios de asistencia, distancias, frecuencia, peso, zonas de manipulación y ambiente de trabajo.</li>
+                            <li><strong>Posturas Corporales (Art. 14):</strong> Se debe trabajar sin giros ni inclinaciones de tronco, sujeción firme y muñeca neutra.</li>
+                            <li><strong>Carga Acumulada y Capacidades (Art. 15 y 16):</strong> El SSST debe garantizar límites de carga acumulada por jornada y evaluar las capacidades físicas y mentales individuales (vigilancia epidemiológica).</li>
+                            <li><strong>Frecuencia (Art. 17):</strong> Al determinar la frecuencia de manipulación se debe considerar: recuperación muscular, volumen/temperatura de carga, antropometría y zonas de manipulación.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Jerarquía de Controles (Art 18-22) -->
+                <div class="bg-slate-800 rounded-3xl p-5 text-white shadow-lg relative overflow-hidden">
+                    <i class="fa-solid fa-shield-virus absolute -right-4 -bottom-4 text-8xl text-slate-700 opacity-50"></i>
+                    <h4 class="font-black text-lg mb-4 text-brand-400 relative z-10">Jerarquía de Controles</h4>
+                    
+                    <div class="space-y-4 relative z-10">
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                            <h5 class="font-bold text-sm text-emerald-400 mb-1"><i class="fa-solid fa-gear"></i> Controles de Ingeniería (Art. 20)</h5>
+                            <p class="text-xs text-slate-300 leading-relaxed">Prioridad absoluta. Incluye equipos mecanizados, análisis de flujo, provisión de sillas ajustables, rampas, mejora de vías de transporte e incorporación de montacargas/sistemas automáticos.</p>
+                        </div>
+                        
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                            <h5 class="font-bold text-sm text-amber-400 mb-1"><i class="fa-solid fa-users-gear"></i> Controles Administrativos (Art. 19)</h5>
+                            <p class="text-xs text-slate-300 leading-relaxed">Rotación de puestos, pausas activas, programas de formación y reorganización del trabajo para labores más livianas o en equipos de dos o más personas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regla de Oro (Art 21) -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl shadow-sm">
+                    <h4 class="font-bold text-amber-800 text-sm mb-2"><i class="fa-solid fa-gavel"></i> Excepción Justificada (Art. 21)</h4>
+                    <p class="legal-text text-amber-700 font-medium">Si es <strong>imposible</strong> aplicar medios técnicos de asistencia mecánicos, el SSST debe justificar las causas técnicas por escrito. Esta justificación debe ser <strong>revisada y aprobada por el Comité de Seguridad y Salud Laboral</strong>, dejando constancia en el libro de actas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-calculadora" class="tab-content hidden pb-6">
+            <div class="flex items-center gap-3 mb-6 pl-2">
+                <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-full flex items-center justify-center shadow-inner shrink-0 text-xl"><i class="fa-solid fa-calculator"></i></div>
+                <div>
+                    <h3 class="font-black text-2xl text-slate-800 leading-tight">Calculadora Legal</h3>
+                    <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-widest">Pesos Máximos (Arts. 23-33)</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-600 font-medium mb-4 pl-2 text-justify">Calcula el peso máximo legal permitido <strong>sin medios técnicos de asistencia</strong>. Los valores aplican siempre que la demanda de esfuerzo físico no entrañe daños a la salud (Art. 29 y 30).</p>
+            
+            <!-- Aviso legal umbral 3kg -->
+            <p class="text-[10px] text-slate-400 font-bold mb-4 pl-2 text-center uppercase tracking-wider"><i class="fa-solid fa-scale-unbalanced text-slate-300"></i> La norma aplica a cargas ≥ 3 kg (Art. 3)</p>
+
+            <!-- Interfaz de la Calculadora -->
+            <div class="bg-white p-5 rounded-3xl shadow-lg border border-slate-200 space-y-5 relative">
+                
+                <!-- Género -->
+                <div>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">1. Población Evaluada</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="calc-radio cursor-pointer">
+                            <input type="radio" name="calc-gender" value="hombre" class="peer sr-only" checked onchange="calculateWeight()">
+                            <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-sm">
+                                <i class="fa-solid fa-person text-lg block mb-1"></i> Hombres
+                            </div>
+                        </label>
+                        <label class="calc-radio cursor-pointer">
+                            <input type="radio" name="calc-gender" value="mujer" class="peer sr-only" onchange="calculateWeight()">
+                            <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-sm">
+                                <i class="fa-solid fa-person-dress text-lg block mb-1"></i> Mujeres / Adolesc.
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Postura -->
+                <div>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">2. Postura de Trabajo</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="calc-radio cursor-pointer">
+                            <input type="radio" name="calc-posture" value="bipedestacion" class="peer sr-only" checked onchange="calculateWeight()">
+                            <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-sm">
+                                <i class="fa-solid fa-child-reaching text-lg block mb-1"></i> De Pie
+                            </div>
+                        </label>
+                        <label class="calc-radio cursor-pointer">
+                            <input type="radio" name="calc-posture" value="sedestacion" class="peer sr-only" onchange="calculateWeight()">
+                            <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-sm">
+                                <i class="fa-solid fa-chair text-lg block mb-1"></i> Sentado
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Variables Condicionales (Bipedestación) -->
+                <div id="conditional-biped" class="space-y-5 transition-all">
+                    <!-- Zona Vertical -->
+                    <div>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+                            3. Zona Vertical (Art. 24)
+                            <i class="fa-solid fa-arrows-up-down text-slate-300"></i>
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="calc-radio cursor-pointer">
+                                <input type="radio" name="calc-zone" value="zona1" class="peer sr-only" checked onchange="calculateWeight()">
+                                <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-2 text-center font-bold text-slate-500 transition-all text-xs h-full flex flex-col justify-center items-center">
+                                    <span class="block text-sm mb-1">Zona 1</span>
+                                    <span class="text-[9px] font-normal text-slate-400 leading-tight">Codo a Nudillos</span>
+                                </div>
+                            </label>
+                            <label class="calc-radio cursor-pointer">
+                                <input type="radio" name="calc-zone" value="zona2" class="peer sr-only" onchange="calculateWeight()">
+                                <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-2 text-center font-bold text-slate-500 transition-all text-xs h-full flex flex-col justify-center items-center">
+                                    <span class="block text-sm mb-1">Zona 2</span>
+                                    <span class="text-[9px] font-normal text-slate-400 leading-tight">Hombro a Codo</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Distancia Horizontal -->
+                    <div>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+                            4. Alcance Horizontal (Art. 25)
+                            <i class="fa-solid fa-arrows-left-right text-slate-300"></i>
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="calc-radio cursor-pointer">
+                                <input type="radio" name="calc-dist" value="proximo" class="peer sr-only" checked onchange="calculateWeight()">
+                                <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-xs h-full flex flex-col justify-center items-center">
+                                    <span class="block text-sm mb-1">Próxima</span>
+                                    <span class="text-[9px] font-normal text-slate-400 leading-tight">Pegada al tronco</span>
+                                </div>
+                            </label>
+                            <label class="calc-radio cursor-pointer">
+                                <input type="radio" name="calc-dist" value="lejano" class="peer sr-only" onchange="calculateWeight()">
+                                <div class="border-2 border-slate-100 bg-slate-50 rounded-xl p-3 text-center font-bold text-slate-500 transition-all text-xs h-full flex flex-col justify-center items-center">
+                                    <span class="block text-sm mb-1">Máxima</span>
+                                    <span class="text-[9px] font-normal text-slate-400 leading-tight">Brazos estirados</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mensaje Sedestación (Refinado a Nivel Checklist Legal) -->
+                <div id="msg-sedestacion" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl text-xs font-medium text-blue-800 text-justify shadow-inner">
+                    <strong class="block mb-2 text-blue-700 text-sm border-b border-blue-200 pb-1"><i class="fa-solid fa-chair mr-1"></i> Regla Estricta (Art. 28/30):</strong>
+                    En posición sentada, es <strong>obligatorio</strong> cumplir con las siguientes condiciones para aplicar este peso legal:
+                    <ul class="list-disc pl-4 mt-2 space-y-1 text-[11px]">
+                        <li>Carga próxima al tronco (sin rotaciones).</li>
+                        <li>Altura de manipulación <strong>solo entre el codo y el hombro</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- RESULTADO SEMÁFORO -->
+                <div class="mt-6 rounded-2xl p-6 text-center relative overflow-hidden shadow-xl border-2 transition-colors duration-300" id="result-box">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-30 z-0 transition-colors duration-300" id="result-glow"></div>
+                    
+                    <p class="relative z-10 text-[10px] font-black uppercase tracking-widest mb-1 transition-colors duration-300" id="result-title">Límite Legal (Art. 29/30)</p>
+                    
+                    <div class="relative z-10 flex items-end justify-center gap-2">
+                        <span class="text-7xl font-black tracking-tighter transition-transform" id="result-kg">20</span>
+                        <span class="text-2xl font-bold mb-2 opacity-70">kg</span>
+                    </div>
+                    
+                    <p id="result-feedback" class="relative z-10 text-[11px] font-bold mt-2 pt-2 border-t border-current/20 opacity-90"></p>
+                </div>
+
+                <!-- Alerta Mecánica Dinámica -->
+                <div id="alerta-mecanica" class="bg-slate-800 text-white p-4 rounded-xl text-xs font-medium text-justify flex gap-3 shadow-md mt-4 transition-all">
+                    <i class="fa-solid fa-robot text-2xl text-brand-400 mt-1"></i>
+                    <div>
+                        <strong class="block mb-1 text-brand-400">Exigencia de Medios Técnicos</strong>
+                        Si en la realidad operativa la carga supera el límite mostrado arriba, es <strong>obligatorio legalmente</strong> implementar medios técnicos mecánicos de asistencia (Art. 18).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prohibiciones Extra -->
+            <div class="mt-6 space-y-3">
+                <div class="bg-rose-50 border-l-4 border-rose-500 p-3 rounded-r-xl">
+                    <h4 class="font-bold text-rose-800 text-xs mb-1">Prohibición: Faja Lumbar (Art. 31)</h4>
+                    <p class="text-[11px] text-rose-700 font-medium">Queda <strong>totalmente prohibida</strong> la faja lumbar como Equipo de Protección Personal. Solo aplica bajo prescripción médica temporal.</p>
+                </div>
+                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-3 rounded-r-xl">
+                    <h4 class="font-bold text-indigo-800 text-xs mb-1">Protección a Vulnerables (Art. 33)</h4>
+                    <p class="text-[11px] text-indigo-700 font-medium">Las embarazadas <strong>NO</strong> realizan actividades de manipulación de carga. Madres en lactancia y adolescentes requieren evaluación médica rigurosa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-gestion" class="tab-content hidden">
+            <div class="flex items-center gap-3 mb-6 pl-2">
+                <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-full flex items-center justify-center shadow-inner shrink-0 text-xl"><i class="fa-solid fa-box-open"></i></div>
+                <div>
+                    <h3 class="font-black text-2xl text-slate-800 leading-tight">Gestión Integral</h3>
+                    <p class="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Empaques y Roles (Arts. 34-39)</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 mb-8">
+                
+                <!-- Empaques y Agarre -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <h4 class="font-black text-slate-800 mb-3 border-b border-slate-100 pb-2"><i class="fa-solid fa-boxes-packing text-amber-500"></i> Diseño de Empaques (Art. 34-35)</h4>
+                    <ul class="legal-text text-slate-600 space-y-3">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <div>Dimensiones no deben exceder la anchura de hombros.</div></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <div>Asas ergonómicas que permitan acoplamiento efectivo (muñeca neutral).</div></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <div>Garantizar equilibrio y distribución uniforme (sin bordes filosos).</div></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <div>Si el peso de la caja excede los máximos, aplicar medios mecánicos.</div></li>
+                    </ul>
+                </div>
+
+                <!-- Formación Obligatoria -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-5 rounded-3xl border border-blue-100 shadow-sm">
+                    <h4 class="font-black text-blue-800 mb-2"><i class="fa-solid fa-chalkboard-user text-blue-500"></i> Formación Teórico-Práctica (Art. 36)</h4>
+                    <p class="legal-text text-slate-600 mb-3">El SSST debe incluir en el Programa de Seguridad y Salud en el Trabajo planes de formación específicos, considerando:</p>
+                    <ul class="text-[11px] font-medium text-slate-500 space-y-2 list-disc pl-5">
+                        <li>Identificación de procesos peligrosos y técnicas seguras.</li>
+                        <li>Indicadores de morbilidad del Sistema de Vigilancia Epidemiológica.</li>
+                        <li>Características químicas/físicas y centro de gravedad de la carga.</li>
+                        <li>Empleo y mantenimiento de medios técnicos mecánicos.</li>
+                        <li>Higiene postural obligatoria al ingreso y ante cambios de proceso.</li>
+                    </ul>
+                </div>
+
+                <!-- Roles SSST y CSSL -->
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-4 border-b border-slate-100 bg-slate-50">
+                        <h4 class="font-black text-slate-800"><i class="fa-solid fa-users-gear text-slate-500"></i> Roles Legales (Art. 37-38)</h4>
+                    </div>
+                    <div class="p-5 space-y-5">
+                        <div>
+                            <strong class="block text-sm text-brand-600 mb-1">Servicio de SST (Art. 37)</strong>
+                            <p class="legal-text text-slate-600">Identificar, evaluar y controlar peligros con participación de los trabajadores. Seleccionar técnicas biomecánicas universalmente aceptadas para evaluaciones ergonómicas, considerando morbilidad.</p>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-brand-600 mb-1">Comité de SST (Art. 38)</strong>
+                            <p class="legal-text text-slate-600">Vigilar condiciones derivadas de la manipulación. <strong>Deliberar y aprobar</strong> las medidas de control propuestas por el Servicio de Seguridad y Salud.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="mt-4 mb-6 relative overflow-hidden bg-white rounded-3xl p-6 shadow-sm border border-slate-200 text-center">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-100 rounded-full blur-2xl z-0"></div>
+            
+            <div class="relative z-10">
+                <img src="https://assets.poap.xyz/73b40c48-9fa2-43b5-98b8-35b3b7b84e54.png?size=large" alt="Logo La Movida SST Plus" class="w-14 h-14 object-contain rounded-full shadow-sm mx-auto mb-3 bg-white border border-slate-50">
+                <h4 class="font-black text-xl text-slate-800 mb-1">La Movida SST Plus</h4>
+                <p class="text-xs text-slate-500 mb-5 font-bold">De la reacción a la Prevención</p>
+
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <p class="text-[10px] uppercase tracking-widest text-slate-400 mb-1 font-bold">Autor / Especialista SST</p>
+                    <p class="font-black text-brand-600 text-base mb-3">David Linares Brea</p>
+                    <div class="flex flex-col items-center gap-2 text-xs font-medium text-slate-600">
+                        <a href="mailto:info@movidasst.com" class="hover:text-brand-500 transition-colors"><i class="fa-solid fa-envelope mr-1 w-4"></i> info@movidasst.com</a>
+                        <a href="https://www.movidasst.com" target="_blank" class="hover:text-brand-500 transition-colors"><i class="fa-solid fa-globe mr-1 w-4"></i> www.movidasst.com</a>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-4 border-t border-slate-100">
+                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-3">Únete a nuestra comunidad</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="https://www.instagram.com/movidasst/" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://web.facebook.com/movidadsst" target="_blank" aria-label="Facebook" class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/movidasst/" target="_blank" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-[#0A66C2] text-white flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    </div>
+                </div>
+
+                <a href="https://whatsapp.com/channel/0029Va0mlH5Jf05mrcCz8r3e" target="_blank" class="mt-5 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white px-5 py-3.5 rounded-xl font-black text-sm w-full transition-transform hover:scale-[1.02] active:scale-95 shadow-[0_4px_15px_rgba(37,211,102,0.3)]">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Canal Oficial de WhatsApp
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <nav class="fixed bottom-0 w-full bg-white border-t border-slate-200 pb-safe z-[100] shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
+        <ul class="flex justify-between items-center px-2 py-2 max-w-lg mx-auto">
+            <li class="flex-1">
+                <a href="#tab-fundamentos" class="nav-tab active flex flex-col items-center justify-center p-1 text-slate-400 gap-1 transition-all group">
+                    <div class="nav-icon relative w-9 h-9 flex items-center justify-center rounded-2xl transition-all"><i class="fa-solid fa-book-bookmark text-xl"></i></div>
+                    <span class="text-[9px] font-bold">Estudio</span>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="#tab-evaluacion" class="nav-tab flex flex-col items-center justify-center p-1 text-slate-400 gap-1 transition-all group">
+                    <div class="nav-icon relative w-9 h-9 flex items-center justify-center rounded-2xl transition-all"><i class="fa-solid fa-shield-halved text-xl"></i></div>
+                    <span class="text-[9px] font-bold">Control</span>
+                </a>
+            </li>
+            <li class="flex-1 -mt-5">
+                <a href="#tab-calculadora" class="nav-tab flex flex-col items-center justify-center p-1 text-slate-400 gap-1 transition-all group">
+                    <div class="nav-icon bg-slate-100 text-slate-400 border-[4px] border-white relative w-14 h-14 flex items-center justify-center rounded-full transition-all shadow-md"><i class="fa-solid fa-calculator text-2xl"></i></div>
+                    <span class="text-[9px] font-bold mt-0.5">Calculadora</span>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="#tab-gestion" class="nav-tab flex flex-col items-center justify-center p-1 text-slate-400 gap-1 transition-all group">
+                    <div class="nav-icon relative w-9 h-9 flex items-center justify-center rounded-2xl transition-all"><i class="fa-solid fa-chalkboard-user text-xl"></i></div>
+                    <span class="text-[9px] font-bold">Gestión</span>
+                </a>
+            </li>
+        </ul>
+        <div class="h-[env(safe-area-inset-bottom)]"></div>
+    </nav>
+
+    <style>
+        .nav-tab.active { color: #14b8a6; }
+        .nav-tab.active .nav-icon { background-color: #f0fdfa; color: #14b8a6; }
+        .nav-tab.active .nav-icon.bg-slate-100 { background-color: #14b8a6; color: white; border-color: #f0fdfa; transform: scale(1.05); }
+    </style>
+
+    <script>
+        // --- 1. Base de Datos Legal de Pesos (Arts. 29 y 30) ---
+        // Estructura: limits[posture][gender][zone][distance]
+        const limits = {
+            bipedestacion: {
+                hombre: { 
+                    zona1: { proximo: 20, lejano: 11 }, 
+                    zona2: { proximo: 14, lejano: 6 } 
+                },
+                mujer: { // Aplica para mujeres y adolescentes
+                    zona1: { proximo: 12, lejano: 7 }, 
+                    zona2: { proximo: 6, lejano: 3 } 
+                } 
+            },
+            sedestacion: {
+                hombre: 5,
+                mujer: 4 
+            }
+        };
+
+        // --- 2. Lógica del Semáforo de la Calculadora (Corregida UX) ---
+        function calculateWeight() {
+            const gender = document.querySelector('input[name="calc-gender"]:checked').value;
+            const posture = document.querySelector('input[name="calc-posture"]:checked').value;
+            
+            const bipedOptions = document.getElementById('conditional-biped');
+            const sedestOptions = document.getElementById('msg-sedestacion');
+            const resultKg = document.getElementById('result-kg');
+            const resultBox = document.getElementById('result-box');
+            const resultGlow = document.getElementById('result-glow');
+            const resultTitle = document.getElementById('result-title');
+            const resultFeedback = document.getElementById('result-feedback');
+
+            let maxWeight = 0;
+            let riskLevel = 'emerald'; // Default safe
+            let feedbackMsg = '';
+
+            if (posture === 'sedestacion') {
+                bipedOptions.style.display = 'none';
+                sedestOptions.style.display = 'block';
+                maxWeight = limits.sedestacion[gender];
+                
+                // Sedestación tiene pesos bajos pero es una postura estática normada.
+                riskLevel = 'blue';
+                feedbackMsg = 'Postura Sedente: Exige control estricto de altura (codo-hombro) y proximidad.';
+            } else {
+                bipedOptions.style.display = 'block';
+                sedestOptions.style.display = 'none';
+                
+                const zone = document.querySelector('input[name="calc-zone"]:checked').value;
+                const dist = document.querySelector('input[name="calc-dist"]:checked').value;
+                
+                maxWeight = limits.bipedestacion[gender][zone][dist];
+
+                // NUEVA LÓGICA DE SEMÁFORO (Basada en la Restricción de la Postura, NO en el peso)
+                if (maxWeight >= 12) {
+                    // 20, 14, 12: Posturas buenas, cerca del cuerpo.
+                    riskLevel = 'emerald';
+                    feedbackMsg = 'Postura Óptima: Permite mayor capacidad de carga según la ley.';
+                } else if (maxWeight >= 6 && maxWeight < 12) {
+                    // 11, 7, 6: Posturas comprometidas (Alcance lejano o Zona 2).
+                    riskLevel = 'amber';
+                    feedbackMsg = 'Precaución: Postura comprometida (lejos del cuerpo o alta) reduce el límite.';
+                } else {
+                    // 3: Posturas críticas (Mujer, Zona 2, Lejano).
+                    riskLevel = 'rose';
+                    feedbackMsg = '¡Alerta Crítica!: Postura altamente lesiva. El límite legal se reduce drásticamente.';
+                }
+            }
+
+            // Aplicar Estilos del Semáforo
+            applyColors(resultBox, resultGlow, resultTitle, resultKg, resultFeedback, riskLevel, feedbackMsg);
+
+            // Animación suave del número (Pop effect)
+            resultKg.classList.remove('animate-pop');
+            void resultKg.offsetWidth; // Trigger reflow
+            resultKg.innerText = maxWeight;
+            resultKg.classList.add('animate-pop');
+        }
+
+        function applyColors(box, glow, title, kg, feedback, color, msg) {
+            box.className = `mt-6 rounded-2xl p-6 text-center relative overflow-hidden shadow-xl border-2 transition-colors duration-300 bg-${color}-50 border-${color}-200 text-${color}-800`;
+            glow.className = `absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-30 z-0 transition-colors duration-300 bg-${color}-400`;
+            title.className = `relative z-10 text-[10px] font-black uppercase tracking-widest mb-1 transition-colors duration-300 text-${color}-600`;
+            kg.className = `text-7xl font-black tracking-tighter text-${color}-600`;
+            feedback.className = `relative z-10 text-[11px] font-bold mt-2 pt-2 border-t border-current/20 opacity-90 text-${color}-700`;
+            feedback.innerText = msg;
+        }
+
+        // Inicializar Calculadora
+        calculateWeight();
+
+        // --- STREAMING_CHUNK:Inicializando Comportamientos UI (Acordeones y Tabs)... ---
+        // --- 3. Acordeones Funcionales ---
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+                // Cerrar todos primero
+                document.querySelectorAll('.accordion-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+                // Alternar el clickeado y centrar la vista
+                if (!isExpanded) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    setTimeout(() => {
+                        const yOffset = -80; 
+                        const y = btn.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                    }, 300);
+                }
+            });
+        });
+
+        // --- 4. Navegación Inferior (Tabs App) ---
+        const tabs = document.querySelectorAll('.nav-tab');
+        const contents = document.querySelectorAll('.tab-content');
+        const progBar = document.getElementById('progress-bar');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href').substring(1);
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                contents.forEach(c => {
+                    c.classList.add('hidden');
+                    c.classList.remove('block', 'animate-fade-in');
+                });
+                
+                const target = document.getElementById(targetId);
+                target.classList.remove('hidden');
+                target.classList.add('block');
+                void target.offsetWidth; // Reflow para reiniciar animación
+                target.classList.add('animate-fade-in');
+
+                // Actualizar barra de progreso (25%, 50%, 75%, 100%)
+                progBar.style.width = `${((index + 1) / tabs.length) * 100}%`;
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
